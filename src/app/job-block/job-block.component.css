@@ -1,0 +1,73 @@
+
+.companyImg{
+    width:100%
+}
+.innerRow{
+    display:flex;
+    justify-content:space-between;
+    
+}
+.jobApp{
+    margin-left:20px; 
+    font-size:0.85em;
+    font-style:italic;
+    cursor:pointer
+}
+.jobApp:hover{
+    text-decoration:underline
+}
+.innerRow span{
+    margin:20px 0px 10px 0px
+}
+.allDetail{
+    display:none
+}
+.arrowUp i{
+    text-align:center;
+    margin-right:0.3em;
+    display:none;
+}
+.arrow{
+    font-size:5em;
+    padding:0px 11px 0px 11px;
+    border-radius:120px;
+}
+.arrowUp:hover{
+    background-color:lightblue;
+    color:white;
+    border-radius:100px;
+}
+.content{
+    padding:20px;
+}
+.row{
+    background-color:white;
+    padding:10px;
+    padding-top:10px;
+    font-family:verdana;
+    position:relative;
+    margin:30px;
+}
+.open{
+    background-color: lightgreen;
+}
+.closed{
+    background-color:orangered;
+}
+.editIcon{
+    padding-left: 15px;
+    vertical-align: middle;
+    opacity: 0.3;
+    cursor: pointer
+}
+.editIcon:hover{
+    opacity:1
+}
+.block{
+    padding: 12px 30px 12px 30px;
+    font-size: 19px;
+    color: white; 
+    text-shadow: 1.4px 1.4px black;
+    border-radius: 31px;
+    height:fit-content
+}

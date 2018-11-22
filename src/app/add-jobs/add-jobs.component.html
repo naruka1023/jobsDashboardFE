@@ -1,0 +1,48 @@
+<h2 style="padding:1.5em; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Add Jobs</h2>
+<div style='text-align:center'>
+  <i *ngIf='waitFlag' class="fa fa-spinner fa-spin" style="font-size:60px"></i>
+</div>
+<div style='margin-top:2em'>
+  <div class='container'>
+    <form (ngSubmit)='onSubmit()' #addForm="ngForm">
+        <div class="form-group">
+          <label for="jobPosition">Job Position: </label>
+          <input type="text" class="form-control" name="jobPosition" id="jobPosition" [(ngModel)]='formModel.title' required>
+        </div>
+  
+        <div class="form-group">
+          <label for="location">Location: </label>
+          <input type="text" class="form-control" name="location" id="location" [(ngModel)]='formModel.location'>
+        </div>
+  
+    
+          
+        <div class="form-group">
+          <label for="jobType">Job Type: </label>
+          <!-- <input type="text" class="form-control"> -->
+          <div class="form-group" style='margin:auto'>
+              <select class="form-control" [(ngModel)]='formModel.type' name="type" id="type">
+                <option *ngFor='let sV of selectValues' [ngValue]='sV.id'>{{sV.name}}</option>
+              </select>
+              <!-- <select class="form-control" *ngIf='applicant.status == "1"' id="sel{{applicant.nameID}}">
+                <option value='0'>Pending</option>
+                <option value='1' selected>Accept</option>
+                <option value='2'>Reject</option>
+              </select>
+              <select class="form-control" *ngIf='applicant.status == "2"' id="sel{{applicant.nameID}}">
+                <option value='0'>Pending</option>
+                <option value='1'>Accept</option>
+                <option value='2' selected>Reject</option>
+              </select> -->
+            </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="url">URL: </label>
+          <input type="text" class="form-control" name="url" id="url" [(ngModel)]='formModel.url'>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+  </div>
+</div>
+<app-form-repository></app-form-repository>

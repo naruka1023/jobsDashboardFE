@@ -1,0 +1,16 @@
++<div style='text-align:right; position:fixed; z-index:2'>
+  <button (click)='saveJobs("SAVE_SUCCESS_FLAG")' class='btn btn-primary buttons'>SAVE</button>
+  <button (click)='revertJobs()' class='btn btn-danger buttons'>REVERT</button>
+  <label id='cR'>Changes Reverted</label>
+</div>
+<div style='height:-webkit-fill-available; overflow-y:scroll; padding-top:6em'>
+    <div style='text-align:center'>
+        <i *ngIf='!waitFlag' class="fa fa-spinner fa-spin" style="font-size:60px"></i>
+    </div>
+    
+    <app-job-block *ngFor="let job of (updateState | async).jobListEditable.jobs.byId | objectToArray" [forDashboard]='true' [job]='job'></app-job-block>
+</div>
+<app-form-repository></app-form-repository>
+
+
+

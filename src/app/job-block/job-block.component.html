@@ -1,0 +1,28 @@
+<div id=tPBlock{{job.jID}} (mouseenter)='mouseHover($event)' (mouseleave)='mouseHover($event)'>
+  <div id=jobBlock{{job.jID}} class='row'>
+    <div  class='content' (click)='toggleDetail(forDashboard)'>
+      <!--  -->
+      <div class='innerRow'>
+        <h3 id='title'>{{job.title }}<i (click)='setModal("EDIT_FLAG")' data-toggle="modal" data-target="#myModal" class="fa fa-edit editIcon" *ngIf='forDashboard'></i></h3>
+        <span>{{job.type}}</span>
+      </div>
+        <span>{{job.location}}</span>
+        <span *ngIf='forDashboard' class='jobApp' (click)='setModal("APPLICANTS_FLAG")' data-toggle="modal" data-target="#myModal">{{totalApplications}} people applied</span>
+      <div class='innerRow' style='margin-top:30px'>
+        <div>  
+          {{job.company}} <br>
+          <a href='{{job.company_url}}'>{{job.company_url}}</a> 
+        </div>
+        <div>
+          <div *ngIf='job.available; else closeBlock' class='open block'>OPEN</div>
+          <ng-template #closeBlock><div class='closed block'>CLOSE</div></ng-template>
+        </div>
+      </div>
+    </div>
+    
+    <div  class='allDetail' id=detail{{job.jID}}> 
+      <div class='descriptionContainer container-fluid'></div>
+    <div class="arrowUp"><i class='fa fa-angle-up arrow' id='close{{job.jID}}' (click)='toggleDetail(forDashboard)'></i></div>
+  </div>
+  
+</div>

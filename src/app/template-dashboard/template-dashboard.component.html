@@ -1,0 +1,23 @@
+<div class=bar>
+  <span style='cursor:pointer' (click)='toggleMenu()'><i class ='fa fa-bars'></i></span>
+  <span>Jobs Dashboard</span>
+  <span><span class='company'>{{ company }}</span><i class ='fa fa-bell'></i></span>
+
+</div>
+<div class='icon-bar'>
+  <ul style='width:30px; left:-30px'></ul>
+  <ul>
+    <li style='cursor:pointer' (click)='toggleMenu()'>
+      <div style='text-align:center' id='mainMenu'><i class='fa fa-bars'></i></div>
+    </li>
+    <li [class.selected]='selected === "dashboard"' (click)="onSelect('dashboard')">
+      <a routerLink="main"><i class="fa fa-file-text-o"></i></a> 
+    </li>  
+    <li [class.selected]='selected === "job-list"' (click)="onSelect('job-list')">
+      <a routerLink="job-list"><i class="fa fa-files-o"></i></a> 
+    </li>  
+    <li [class.selected]='selected === "addNewJobs"' (click)="onSelect('addNewJobs')">
+      <a routerLink="add-jobs"><i class="fa fa-plus"></i></a>
+    </li>   
+  </ul>
+</div>

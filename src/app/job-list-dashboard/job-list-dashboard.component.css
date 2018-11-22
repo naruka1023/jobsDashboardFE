@@ -1,0 +1,9 @@
+.buttons{
+    margin:1.5em;
+    margin-top:1em;
+}
+#cR{
+    color:red;
+    font-weight:300px;
+    opacity:0;
+}

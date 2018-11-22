@@ -1,0 +1,17 @@
+<div style='text-align:center'>
+    <i *ngIf='!waitFlag' class="fa fa-spinner fa-spin" style="font-size:60px; margin-top:1em"></i>
+</div>
+<div *ngIf='waitFlag'>
+  <div class='row title'>
+    <h1 >Welcome {{company}}!</h1>
+    <img src='{{logoImg}}'>
+  </div>
+  <div class='row'>
+    <div class='col-sm-6'><div>Jobs Posted:</div><div class='numerics'>{{ totalJobPost }}</div></div>
+    <div class='col-sm-6'><div>Job Applications Submitted:</div><div class='numerics'>{{ totalApplicants }}</div></div>
+  </div>
+  <div class='row'>
+    <div class='col-sm-6'><div>Job Applications Accepted:</div><div class='numerics'>{{ totalAccepted }}</div></div>
+    <div class='col-sm-6'><div>Job Applications Rejected:</div><div class='numerics'>{{ totalRejected }}</div></div>
+  </div>
+</div>

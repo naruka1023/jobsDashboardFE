@@ -1,0 +1,124 @@
+<div class="modal fade" id="myModal" role="dialog">
+    <div *ngIf='(updateState | async).modalFlag.value == "EDIT_FLAG"' class="modal-dialog">  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Page</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container" style='width:-webkit-fill-available'>
+              <!-- <h1>Hero Form</h1> -->
+              <form (ngSubmit)='onSubmit()' #editForm="ngForm">
+                <div class="form-group">
+                  <label for="jobPosition">Job Position: </label>
+                  <input type="text" class="form-control" name="jobPosition" id="jobPosition" [(ngModel)]='formModel.title' required>
+                </div>
+          
+                <div class="form-group">
+                  <label for="location">Location: </label>
+                  <input type="text" class="form-control" name="location" id="location" [(ngModel)]='formModel.location'>
+                </div>
+          
+                <div class="form-group">
+                  <label for="companyName">Company Name: </label>
+                  <input type="text" class="form-control" name="companyName" id="companyName" [(ngModel)]='formModel.company'>
+                </div>
+                  
+                <div class="form-group">
+                  <label for="type">Job Type: </label>
+                  <input type="text" class="form-control" name="type" id="type" [(ngModel)]='formModel.type'>
+                </div>
+          
+                <div class="form-group">
+                  <label for="url">URL: </label>
+                  <input type="text" class="form-control" name="company_url" id="company_url" [(ngModel)]='formModel.company_url'>
+                </div>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+  </div>
+  <div *ngIf='(updateState | async).modalFlag.value == "SAVE_SUCCESS_FLAG"'class="modal-dialog">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h4 class="modal-title"></h4>
+      </div> -->
+      <div class="modal-body">
+        <div class="container" style='width:-webkit-fill-available'>
+          Changes have been saved! 
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  <div *ngIf='(updateState | async).modalFlag.value == "ADD_SUCCESS_FLAG"'class="modal-dialog">
+    <div class="modal-content">
+      <!-- <div class="modal-header">
+        <h4 class="modal-title"></h4>
+      </div> -->
+      <div class="modal-body">
+        <div class="container" style='width:-webkit-fill-available'>
+          A new job has been posted!
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+    <div *ngIf='(updateState | async).modalFlag.value == "APPLICANTS_FLAG"' class="modal-dialog">  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Applicants</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container" style='width:-webkit-fill-available'>
+              <!-- <h1>Hero Form</h1> -->
+              <form (ngSubmit)='onSubmit()' #applicantsForm="ngForm">
+                <table *ngIf="applicantsArray.length != 0 else noApplicants" style='margin-bottom:1em'>
+                    <tr>
+                        <th>Application ID</th>
+                        <th>Name</th>
+                        <th>Accept/Reject</th>
+                    </tr>
+                    <tr *ngFor='let applicant of applicantsArray; index as i'>
+                      
+                      <td>{{applicant.apID}}</td>
+                      <td>{{applicant.name}}</td>
+                      <td>
+                        <div class="form-group" style='margin:auto'>
+                            <select class="form-control" id="sel{{applicant.nameID}}">
+                              <option value='0'>Pending</option>
+                              <option value='1'>Accept</option>
+                              <option value='2'>Reject</option>
+                            </select>
+                            <!-- <select class="form-control" *ngIf='applicant.status == "1"' id="sel{{applicant.nameID}}">
+                              <option value='0'>Pending</option>
+                              <option value='1' selected>Accept</option>
+                              <option value='2'>Reject</option>
+                            </select>
+                            <select class="form-control" *ngIf='applicant.status == "2"' id="sel{{applicant.nameID}}">
+                              <option value='0'>Pending</option>
+                              <option value='1'>Accept</option>
+                              <option value='2' selected>Reject</option>
+                            </select> -->
+                          </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <ng-template #noApplicants><div style='text-align:center; padding:20px'>No applicants have applied for this job.</div></ng-template>
+                <!-- <div class="form-group">
+                  <label for="location">Location: </label>
+                  <input type="text" class="form-control" id="location">
+                </div> -->
+                <button *ngIf='applicantsArray.length != 0'type="submit"  class="btn btn-success">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
