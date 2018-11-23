@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Application } from './applications';
-import { Job } from './Jobs';
 import { catchError, filter } from 'rxjs/operators';
 // import { jobList } from './jobList';
 const httpOptions = {
