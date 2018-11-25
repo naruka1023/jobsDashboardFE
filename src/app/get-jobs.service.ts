@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class GetJobsService {
   
-  private jobsUrl = 'http://localhost:8000/api'
+  private jobsUrl = 'https://jobdashboardbe.herokuapp.com/api'
   
   constructor(private http: HttpClient) {}
 
