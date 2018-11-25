@@ -28,7 +28,7 @@ export class FrameComponent implements OnInit {
         companyID = companyID.split('=')[1];
         this.storage.set(STORAGE_KEY, companyID);
     }else{
-      let url = 'http://localhost:8000/cc';
+      let url = 'https://jobdashboardbe.herokuapp.com/';
       window.location.href = url;
     }
     this.router.navigate(['/main'])
