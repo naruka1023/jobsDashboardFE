@@ -1,9 +1,12 @@
 <div id=tPBlock{{job.jID}} (mouseenter)='mouseHover($event)' (mouseleave)='mouseHover($event)'>
   <div id=jobBlock{{job.jID}} class='row'>
-    <div  class='content' (click)='toggleDetail(forDashboard)'>
+    <div  class='content'>
       <!--  -->
       <div class='innerRow'>
-        <h3 id='title'>{{job.title }}<i (click)='setModal("EDIT_FLAG")' data-toggle="modal" data-target="#myModal" class="fa fa-edit editIcon" *ngIf='forDashboard'></i></h3>
+        <h3 id='title'>{{job.title }}
+          <i (click)='setModal("EDIT_FLAG")' data-toggle="modal" data-target="#myModal" class="fa fa-edit editIcon" *ngIf='forDashboard'></i>
+          <i class='fa fa-angle-down arrowDown' (click)='toggleDetail(forDashboard)'></i>
+        </h3>
         <span>{{job.type}}</span>
       </div>
         <span>{{job.location}}</span>

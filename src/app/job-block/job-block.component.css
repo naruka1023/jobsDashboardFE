@@ -25,6 +25,16 @@
 .innerRow span{
     margin:20px 0px 10px 0px
 }
+.arrowDown{
+    vertical-align: middle;
+    font-size: 2em;
+    margin-left: 0.5em;
+    padding: 0 9px 0 9px;
+}
+.arrowDown:hover{
+    background-color: rgb(228, 248, 255);
+    border-radius: 100px;
+}
 .allDetail{
     display:none
 }

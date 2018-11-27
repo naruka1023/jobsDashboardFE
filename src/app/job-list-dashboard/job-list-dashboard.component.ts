@@ -58,18 +58,10 @@ export class JobListDashboardComponent implements OnDestroy  {
         case 'REVERT':
           this.popup.text('Click here to revert all changes to its original state.'); 
           this.popup.show(); 
-          
-          var popper = new Popper(this.button,this.popup,{
-                  placement: 'right',
-          }); 
           break;
           case 'SAVE':
             this.popup.text("Click here to save all changes. Changes made will not be pushed to the database if this button isn't pressed."); 
             this.popup.show(); 
-            
-            var popper = new Popper(this.button,this.popup,{
-                    placement: 'right',
-            }); 
         break;
       }
     }
@@ -154,6 +146,7 @@ export class JobListDashboardComponent implements OnDestroy  {
         });
   }
   revertJobs() {
+    this.popup.hide()
     $('#cR').css('opacity', '100');
     setTimeout(() =>{
       $('#cR').animate({opacity: '0'}, 400, 'swing')

@@ -35,8 +35,11 @@ export class MainDashboardComponent implements OnInit {
                 this.totalRejected = 0;
                 this.company = company;
                 this.totalJobPost = allJobs.allIds.length;
-                
-                this.totalApplicants = allApplications.allIds.length;
+                if(Array.isArray(this.totalApplicants)){
+                  this.totalApplicants = allApplications.allIds.length;
+                }else{
+                  this.totalApplicants = Object.values(allApplications.allIds).length;
+                }
                 Object.values(allApplications.byId).forEach((value)=>{
                   switch(value['status']){
                     case '1':
