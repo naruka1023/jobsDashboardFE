@@ -7,8 +7,9 @@
         <span>{{job.type}}</span>
       </div>
         <span>{{job.location}}</span>
-        <span *ngIf='forDashboard' class='jobApp' (click)='setModal("APPLICANTS_FLAG")' data-toggle="modal" data-target="#myModal">{{totalApplications}} people applied</span>
-      <div class='innerRow' style='margin-top:30px'>
+        <span *ngIf='forDashboard' class='jobApp' (click)='setModal("APPLICANTS_FLAG")' data-toggle="modal" data-target="#myModal">{{totalApplications}} people applied</span>       
+        <span>  <-- Click Here!</span>  
+        <div class='innerRow' style='margin-top:30px'>
         <div>  
           {{job.company}} <br>
           <a href='{{job.company_url}}'>{{job.company_url}}</a> 

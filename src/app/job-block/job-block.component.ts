@@ -17,13 +17,19 @@ export class JobBlockComponent implements OnInit {
   @Input() job;
   @Input() forDashboard:boolean;
 
-  
+  // popper: Popper;
   jobBlock:string;
   activatedFlag: boolean;
   totalApplications:number;
 
   
   ngOnInit() {
+    // var button = $('#button');
+    // var popup = $('#popup');
+    // popup.show();
+    //   var popper = new Popper(button, popup,{
+    //   placement: 'bottom'
+    // })
     this.activatedFlag = false;
     this.jobBlock = '#jobBlock' + this.job.jID;
     this.totalApplications =  this.job.apID.length;

@@ -1,6 +1,7 @@
-+<div style='text-align:right; position:fixed; z-index:2'>
-  <button (click)='saveJobs("SAVE_SUCCESS_FLAG")' class='btn btn-primary buttons'>SAVE</button>
-  <button (click)='revertJobs()' class='btn btn-danger buttons'>REVERT</button>
+<div style='text-align:right; position:fixed; z-index:2'>
+  <button (mouseenter)='mouseHover($event)' (mouseleave)='mouseHover($event)' (click)='saveJobs("SAVE_SUCCESS_FLAG")' class='btn btn-primary buttons'>SAVE</button>
+  <button (click)='revertJobs()' (mouseenter)='mouseHover($event)' (mouseleave)='mouseHover($event)' class='btn btn-danger buttons'>REVERT</button>
+  <span id='popup'>Click here to revert all changes to its original state.</span>
   <label id='cR'>Changes Reverted</label>
 </div>
 <div style='height:-webkit-fill-available; overflow-y:scroll; padding-top:6em'>

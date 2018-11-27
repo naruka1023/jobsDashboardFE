@@ -2,6 +2,7 @@ import { Component, OnDestroy  } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { SAVE_ALL_JOBS, REVERT_JOB, SET_MODAL } from '../actions';
 import { Job } from '../jobs';
+import Popper from 'popper.js';
 declare var $: any;
 import { IAppState } from '../store';
 import { GetJobsService } from '../get-jobs.service';
@@ -12,17 +13,28 @@ import { GetJobsService } from '../get-jobs.service';
   styleUrls: ['./job-list-dashboard.component.css']
 })
 export class JobListDashboardComponent implements OnDestroy  {
+  
   subscription;
+  popper:Popper;
   waitFlag:boolean;
   jobList: Job[];
+  popup: any;
+  popup2: any;
+  button: any;
   @select() updateState;
 
   constructor(private ngRedux: NgRedux<IAppState>,
-              private getJobsService: GetJobsService)
+              private getJobsService: GetJobsService,)
     {}
     
   ngOnInit(){
     this.waitFlag = this.ngRedux.getState().updateState.waitFlag;
+    this.button = $('#button');
+    this.popup = $('#popup');
+    this.popup.hide();
+    //   var popper = new Popper(button, popup,{
+    //   placement: 'bottom'
+    // })
       this.subscription = this.updateState.subscribe(() =>{
         // console.log('service done');
         this.waitFlag = this.ngRedux.getState().updateState.waitFlag;
@@ -40,6 +52,31 @@ export class JobListDashboardComponent implements OnDestroy  {
      });
   }
 
+  mouseHover(e){
+    if(e.type == 'mouseenter'){
+      switch(e.srcElement.firstChild.data){
+        case 'REVERT':
+          this.popup.text('Click here to revert all changes to its original state.'); 
+          this.popup.show(); 
+          
+          var popper = new Popper(this.button,this.popup,{
+                  placement: 'right',
+          }); 
+          break;
+          case 'SAVE':
+            this.popup.text("Click here to save all changes. Changes made will not be pushed to the database if this button isn't pressed."); 
+            this.popup.show(); 
+            
+            var popper = new Popper(this.button,this.popup,{
+                    placement: 'right',
+            }); 
+        break;
+      }
+    }
+    if(e.type == 'mouseleave'){
+      this.popup.hide();
+    }
+  }
 
   findAppDifference(arrayA, arrayB){
     let diffArray = [];

@@ -13,6 +13,12 @@
     font-style:italic;
     cursor:pointer
 }
+#popup{
+    padding:10px; 
+    border: solid orange 1px; 
+    background-color: red;
+    color: white;
+}
 .jobApp:hover{
     text-decoration:underline
 }
