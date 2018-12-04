@@ -7,3 +7,4 @@
   
   
 UML Sequence Diagram: 
+![alt text](https://github.com/naruka1023/jobsDashboardFE/blob/master/sequenceDiagram.png)
