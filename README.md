@@ -1,27 +1,9 @@
-# MyApp
+# Job Dashboard Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  This project as the title says, is called the Job Dashboard Project. Its a service that enable the HR department from any company to reject or accept a massive amount of applicants at once. One can also choose to edit or add new job postings. I use redux to manage the state of the app and keeping all data of the app in one place, so there would be no need for broadcasting or emitting data around, creating a giant mess in the process. The use of redux have also enabled the app to save all changes, which without it, wouldn't be possible. Saving changes is simply a giant POST request that interact with my API to update the database according to the user's changes. Any information regarding the API that I developed can be found in https://github.com/naruka1023/jobsDashboardBE.
+  The purpose of this project is to show recruiters of my proficiency in developing a Web App by using HTML5, CSS, Javascript, sql, Laravel, and Angular. I used Angular for the frontend, and Laravel for the backend. I could've easily used Vue.js since Vue is more compatible with Laravel. But the reason I used Angular is because to show that I'm just as capable of learning new framework and applying it to a professional setting. 
+  This project is far from finished. I only developed the functionalities for the HR users side. I have yet to develop a Job Posting page (reminiscient to Indeed.com, stackoverflow.com and other job market sites we know and love) that would let future job candidates apply for a job, a notification system that would notify a company everytime a person apply for a job, and a login system for the job dashboard. I'm also planning to implement a new functionality within the job dashboard app that would enable HR to filter our job candidates based on gender, age group, experience, etc. 
+  But perhaps that is for another day. The purpose of this project is to showcase my capabilities in designing, developing, testing, and deploying a web application anyways. And I think I pretty much accomplish that. 
+  
+  
+UML Sequence Diagram: 
