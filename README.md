@@ -6,5 +6,8 @@
   But perhaps that is for another day. The purpose of this project is to showcase my capabilities in designing, developing, testing, and deploying a web application anyways. And I think I pretty much accomplish that. 
   
   
-UML Sequence Diagram: <br>
+UML Sequence Diagram: <br><br>
 ![alt text](https://github.com/naruka1023/jobsDashboardFE/blob/master/sequenceDiagram.png)
+
+<br><br>
+App starts here: https://jobdashboardbe.herokuapp.com/
